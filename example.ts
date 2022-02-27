@@ -1,19 +1,22 @@
-class Person {
-  public readonly name: string = "Mark";
-  private readonly country: string;
+// class => object
+// A반 {mark: 'male', jade: 'male'}
+// B반 {chloe: 'femaie', alex: 'male', anna: 'female'}
 
-  public constructor(private _name: string, private age: number){
-    this.country = "Korea";
-  }
+class Students {
+  [index: string]: "male" | "female" ;
 
-  hello() {
-    this.country = 'USA'; // error
-  }
-
+  mark: "male" = "male";
 }
 
+const a = new Students();
+a.mark = "male";
+a.jade = "male";
 
-const p1 = new Person("Mark",22);
-console.log(p1.name); // get
-p1.name = "David" //  set error
-console.log(p1.name);
+console.log(a);
+
+const b = new Students();
+b.chloe = "female";
+b.alex = "male";
+b.anna = "female";
+
+console.log(b);

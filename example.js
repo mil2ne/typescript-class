@@ -1,19 +1,18 @@
 "use strict";
-class Person {
-    constructor(_name, age) {
-        this._name = _name;
-        this.age = age;
-    }
-    get name() {
-        // console.log('get');
-        return this._name + ' Hello';
-    }
-    set name(n) {
-        console.log('set');
-        this._name = n;
+// class => object
+// A반 {mark: 'male', jade: 'male'}
+// B반 {chloe: 'femaie', alex: 'male', anna: 'female'}
+class Students {
+    constructor() {
+        this.mark = "male";
     }
 }
-const p1 = new Person("Mark", 22);
-console.log(p1.name); // get
-p1.name = "David"; //  set
-console.log(p1.name);
+const a = new Students();
+a.mark = "male";
+a.jade = "male";
+console.log(a);
+const b = new Students();
+b.chloe = "female";
+b.alex = "male";
+b.anna = "female";
+console.log(b);
