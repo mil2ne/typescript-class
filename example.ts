@@ -1,8 +1,8 @@
 class Person {
-  name: string = "Mark";
-  age: number;
+  public name: string = "Mark";
+  private age: number;
 
-  constructor(age?: number){
+  public constructor(age?: number){
     if(age === undefined){
       this.age = 20;
     } else {
@@ -11,9 +11,6 @@ class Person {
   }
 }
 
-const p1 = new Person(22);
-const p2 = new Person();
 
-console.log(p1);
-console.log(p1.age);
-console.log(p2);
+const p1 = new Person(22);
+console.log(p1.);
