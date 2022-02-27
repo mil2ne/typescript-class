@@ -1,19 +1,19 @@
-class Person {
-  private static CITY = 'Seoul';
-  public hello() {
-    console.log('안녕하세요', Person.CITY);
+class ClassName {
+  private static instance: ClassName | null = null;
+  public static getInstance(): ClassName {
+    // ClassName 으로 부터 만든 object 가 있으면 그걸 리턴
+    // ClassName 없으면, 만들어서 리턴
+    if (ClassName.instance === null) {
+     ClassName.instance =  new ClassName();
+    }
+
+    return ClassName.instance;
   }
-  public change() {
-    Person.CITY = "LA";
-  }
+
+  private constructor() {}
 }
 
-const p1 = new Person();
-p1.hello(); 
+const a = ClassName.getInstance();
+const b = ClassName.getInstance();
 
-const p2 = new Person();
-p2.hello();
-
-p1.change();
-p2.hello();
-
+console.log(a === b);
