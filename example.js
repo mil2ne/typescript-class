@@ -1,17 +1,9 @@
 "use strict";
 class Person {
-    constructor(age) {
-        this.name = "Mark";
-        if (age === undefined) {
-            this.age = 20;
-        }
-        else {
-            this.age = age;
-        }
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
 }
-const p1 = new Person(22);
-const p2 = new Person();
+const p1 = new Person("Mark", 22);
 console.log(p1);
-console.log(p1.age);
-console.log(p2);
