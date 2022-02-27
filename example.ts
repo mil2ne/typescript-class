@@ -1,22 +1,19 @@
-// class => object
-// A반 {mark: 'male', jade: 'male'}
-// B반 {chloe: 'femaie', alex: 'male', anna: 'female'}
-
-class Students {
-  [index: string]: "male" | "female" ;
-
-  mark: "male" = "male";
+class Person {
+  private static CITY = 'Seoul';
+  public hello() {
+    console.log('안녕하세요', Person.CITY);
+  }
+  public change() {
+    Person.CITY = "LA";
+  }
 }
 
-const a = new Students();
-a.mark = "male";
-a.jade = "male";
+const p1 = new Person();
+p1.hello(); 
 
-console.log(a);
+const p2 = new Person();
+p2.hello();
 
-const b = new Students();
-b.chloe = "female";
-b.alex = "male";
-b.anna = "female";
+p1.change();
+p2.hello();
 
-console.log(b);

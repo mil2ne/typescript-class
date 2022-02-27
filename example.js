@@ -1,18 +1,16 @@
 "use strict";
-// class => object
-// A반 {mark: 'male', jade: 'male'}
-// B반 {chloe: 'femaie', alex: 'male', anna: 'female'}
-class Students {
-    constructor() {
-        this.mark = "male";
+class Person {
+    hello() {
+        console.log('안녕하세요', Person.CITY);
+    }
+    change() {
+        Person.CITY = "LA";
     }
 }
-const a = new Students();
-a.mark = "male";
-a.jade = "male";
-console.log(a);
-const b = new Students();
-b.chloe = "female";
-b.alex = "male";
-b.anna = "female";
-console.log(b);
+Person.CITY = 'Seoul';
+const p1 = new Person();
+p1.hello();
+const p2 = new Person();
+p2.hello();
+p1.change();
+p2.hello();
