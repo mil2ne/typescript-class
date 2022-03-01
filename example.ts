@@ -1,19 +1,27 @@
-class ClassName {
-  private static instance: ClassName | null = null;
-  public static getInstance(): ClassName {
-    // ClassName 으로 부터 만든 object 가 있으면 그걸 리턴
-    // ClassName 없으면, 만들어서 리턴
-    if (ClassName.instance === null) {
-     ClassName.instance =  new ClassName();
-    }
+class Parent {
+  constructor(protected _name: string, private _age: number) {}
 
-    return ClassName.instance;
+  public print(): void {
+    console.log(`이름은 ${this._name} 이고 나이는 ${this._age} 입니다.`)
   }
 
-  private constructor() {}
+  protected printName(): void {
+    console.log(this._name, this._age);
+  }
 }
 
-const a = ClassName.getInstance();
-const b = ClassName.getInstance();
+const p = new Parent('Mark', 39);
+p.print();
 
-console.log(a === b);
+class Child extends Parent {
+  public gender = "male";
+
+  constructor(age: number) {
+    super('Mark Jr', age);
+    this.printName();
+
+  }
+}
+
+const c = new Child(1);
+c.print();
